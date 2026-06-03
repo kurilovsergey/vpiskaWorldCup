@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <meta name="theme-color" content="#3a3a3a">
+  <title>FIFA Ticket Generator</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <section id="form-view" class="view view--active">
+      <header class="form-header">
+        <h1>Генератор билета</h1>
+        <p>Заполните данные и нажмите «Сгенерировать»</p>
+      </header>
+
+      <form id="ticket-form" class="ticket-form" autocomplete="off">
+        <label class="field">
+          <span class="field__label">Матч</span>
+          <select id="match" name="match" required></select>
+        </label>
+        <label class="field">
+          <span class="field__label">Gate / Puerta</span>
+          <input type="text" id="gate" name="gate" value="P6" required maxlength="12">
+        </label>
+        <label class="field">
+          <span class="field__label">Stairs / Escalera</span>
+          <input type="text" id="stairs" name="stairs" value="7" required maxlength="8">
+        </label>
+        <label class="field">
+          <span class="field__label">Section / Sección</span>
+          <input type="text" id="section" name="section" value="231" required maxlength="8">
+        </label>
+        <label class="field">
+          <span class="field__label">Row / Fila</span>
+          <input type="text" id="row" name="row" value="Z" required maxlength="6">
+        </label>
+        <label class="field">
+          <span class="field__label">Seat / Asiento</span>
+          <input type="text" id="seat" name="seat" value="9" required maxlength="8">
+        </label>
+        <label class="field">
+          <span class="field__label">Ticket holder</span>
+          <input type="text" id="holder" name="holder" value="SERGEI KURILOV" required maxlength="64">
+        </label>
+        <label class="field">
+          <span class="field__label">Категория</span>
+          <select id="category" name="category" required>
+            <option value="Category 1">Category 1</option>
+            <option value="Category 2">Category 2</option>
+            <option value="Category 3" selected>Category 3</option>
+            <option value="Category 4">Category 4</option>
+          </select>
+        </label>
+        <button type="submit" class="btn-primary">Сгенерировать билет</button>
+      </form>
+    </section>
+
+    <section id="ticket-view" class="view" hidden>
+      <div class="phone">
+        <header class="topbar">
+          <button type="button" class="back" id="btn-back" aria-label="Назад"></button>
+          Ticket 1 of 1
+          <span class="dot" aria-hidden="true"></span>
+        </header>
+
+        <section class="notice">
+          <span class="info" aria-hidden="true">i</span>
+          <img class="notice__img" src="assets/image.png" alt="">
+        </section>
+
+        <main class="card">
+          <div class="matchno" id="out-match-num">36</div>
+
+          <div class="logo" aria-hidden="true">
+            <span>FIFA</span>
+            <span>WORLD CUP</span>
+            <span>2026</span>
+          </div>
+
+          <h2 class="title" id="out-match-title">M36 Tunisia vs Japan</h2>
+
+          <div class="meta">
+            <div class="meta__row">
+              <img class="meta__ico" src="assets/free-icon-calendar-days-10178999.png" width="25" height="25" alt="">
+              <span id="out-datetime">20 JUN 26, 22:00</span>
+            </div>
+            <div class="meta__row">
+              <img class="meta__ico" src="assets/1904662-location-map-map-location-map-point-pin-place-placeholder_122512.png" width="25" height="25" alt="">
+              <span id="out-stadium">Monterrey Stadium</span>
+            </div>
+          </div>
+
+          <div class="grid">
+            <div class="box">
+              <label>Entrance<br>Ingreso</label>
+              <strong id="out-entrance">B/C/D/E</strong>
+            </div>
+            <div class="box">
+              <label>Gate<br>Puerta</label>
+              <strong id="out-gate">P6</strong>
+            </div>
+            <div class="box">
+              <label>Stairs<br>Escalera</label>
+              <strong id="out-stairs">7</strong>
+            </div>
+            <div class="box">
+              <label>Section<br>Sección</label>
+              <strong id="out-section">231</strong>
+            </div>
+          </div>
+
+          <div class="smallgrid">
+            <div class="box">
+              <label>Row<br>Fila</label>
+              <strong id="out-row">Z</strong>
+            </div>
+            <div class="box">
+              <label>Seat<br>Asiento</label>
+              <strong id="out-seat">9</strong>
+            </div>
+          </div>
+
+          <div class="separator"></div>
+
+          <div class="details">
+            <div class="row name">
+              <div>Ticket Holder</div>
+              <div id="out-holder">SERGEI KURILOV</div>
+            </div>
+            <div class="row cat">
+              <div>Category</div>
+              <div id="out-category">Category 3</div>
+            </div>
+          </div>
+
+          <div class="float" aria-hidden="true"></div>
+          <div class="noise" aria-hidden="true"></div>
+        </main>
+      </div>
+    </section>
+  </div>
+
+  <script src="matches.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
