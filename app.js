@@ -34,6 +34,29 @@
     return MATCHES.find((m) => m.num === num) || MATCHES[0];
   }
 
+  const ticker = document.getElementById("ticker");
+  const tickerTrack = document.getElementById("ticker-track");
+
+  function buildTicker(code) {
+    if (!tickerTrack) return;
+    tickerTrack.innerHTML = "";
+
+    const makeGroup = () => {
+      const group = document.createElement("div");
+      group.className = "ticker__group";
+      for (let i = 0; i < 10; i += 1) {
+        const chip = document.createElement("span");
+        chip.className = "ticker__chip";
+        chip.textContent = code;
+        group.appendChild(chip);
+      }
+      return group;
+    };
+
+    tickerTrack.appendChild(makeGroup());
+    tickerTrack.appendChild(makeGroup());
+  }
+
   function showView(view) {
     const isTicket = view === "ticket";
     formView.classList.toggle("view--active", !isTicket);
@@ -41,6 +64,10 @@
     ticketView.classList.toggle("view--active", isTicket);
     ticketView.hidden = !isTicket;
     document.body.classList.toggle("body--ticket", isTicket);
+    if (ticker) {
+      ticker.hidden = !isTicket;
+      ticker.setAttribute("aria-hidden", String(!isTicket));
+    }
   }
 
   function fillTicket(data) {
@@ -62,6 +89,7 @@
   form.addEventListener("submit", (e) => {
     e.preventDefault();
     const match = getMatch(Number(matchSelect.value));
+    const ticketCode = document.getElementById("ticket-code").value.trim() || "368";
     fillTicket({
       match,
       gate: document.getElementById("gate").value.trim().toUpperCase(),
@@ -72,6 +100,7 @@
       holder: document.getElementById("holder").value.trim().toUpperCase(),
       category: document.getElementById("category").value,
     });
+    buildTicker(ticketCode);
     showView("ticket");
     window.scrollTo(0, 0);
   });

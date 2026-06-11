@@ -106,6 +106,7 @@ body:not(.body--ticket) {
 
 body.body--ticket {
   background: #3a3a3a;
+  padding-bottom: calc(78px + env(safe-area-inset-bottom, 0px));
 }
 
 body.body--ticket .app-shell {
@@ -204,15 +205,57 @@ body.body--ticket .app-shell {
   border-radius: 0 20px 20px 0;
 }
 
+.qr-wrap {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  max-width: 100%;
+  max-height: 100%;
+}
+
 .notice__img {
   display: block;
   max-width: 100%;
-  max-height: 100%;
+  max-height: 158px;
   width: auto;
   height: auto;
   object-fit: contain;
-  position: relative;
-  z-index: 2;
+}
+
+.qr-wrap__scan {
+  position: absolute;
+  inset: -5px;
+  width: calc(100% + 10px);
+  height: calc(100% + 10px);
+  pointer-events: none;
+  overflow: visible;
+}
+
+.qr-wrap__line {
+  fill: none;
+  stroke: #1c1c1c;
+  stroke-width: 2.5;
+  vector-effect: non-scaling-stroke;
+  stroke-linecap: butt;
+  /* один длинный штрих на контуре — ровно одна линия на слой */
+  stroke-dasharray: 28 72;
+  animation: qr-orbit 3s linear infinite;
+}
+
+.qr-wrap__line--2 {
+  animation-delay: -1.5s;
+}
+
+@keyframes qr-orbit {
+  from {
+    stroke-dashoffset: 0;
+  }
+
+  to {
+    stroke-dashoffset: -100;
+  }
 }
 
 .info {
@@ -441,8 +484,100 @@ body.body--ticket .app-shell {
   pointer-events: none;
 }
 
+/* Бегущая строка с номером */
+.ticker {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 200;
+  height: 78px;
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  background: #fff;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.06);
+}
+
+.ticker[hidden] {
+  display: none !important;
+}
+
+.ticker__viewport {
+  width: 100%;
+  max-width: 738px;
+  margin: 0 auto;
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.ticker__track {
+  display: flex;
+  flex-shrink: 0;
+  animation: ticker-scroll 20s linear infinite;
+  will-change: transform;
+}
+
+.ticker__group {
+  display: flex;
+  align-items: center;
+  gap: 56px;
+  padding-right: 56px;
+}
+
+.ticker__chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 118px;
+  height: 52px;
+  padding: 0 26px;
+  background: #f89b2c;
+  color: #111;
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  border-radius: 18px 18px 4px 18px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+@keyframes ticker-scroll {
+  from {
+    transform: translateX(-50%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
 /* Мобильная адаптация — масштаб макета 738×1516 под ширину экрана */
 @media (max-width: 760px) {
+  body.body--ticket {
+    padding-bottom: calc(14vw + env(safe-area-inset-bottom, 0px));
+  }
+
+  .ticker {
+    height: 14vw;
+  }
+
+  .ticker__chip {
+    min-width: 22vw;
+    height: 9vw;
+    padding: 0 4vw;
+    font-size: 4.5vw;
+    border-radius: 3.5vw 3.5vw 0.8vw 3.5vw;
+  }
+
+  .ticker__group {
+    gap: 8vw;
+    padding-right: 8vw;
+  }
+
   .phone {
     width: 100vw;
     height: 205.42vw;
@@ -492,6 +627,20 @@ body.body--ticket .app-shell {
   .notice::after {
     right: 0;
     border-radius: 0 2.7vw 2.7vw 0;
+  }
+
+  .notice__img {
+    max-height: 20vw;
+  }
+
+  .qr-wrap__scan {
+    inset: -0.7vw;
+    width: calc(100% + 1.4vw);
+    height: calc(100% + 1.4vw);
+  }
+
+  .qr-wrap__line {
+    stroke-width: 2;
   }
 
   .info {
