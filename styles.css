@@ -106,7 +106,7 @@ body:not(.body--ticket) {
 
 body.body--ticket {
   background: #3a3a3a;
-  padding-bottom: calc(78px + env(safe-area-inset-bottom, 0px));
+  padding-bottom: calc(104px + env(safe-area-inset-bottom, 0px));
 }
 
 body.body--ticket .app-shell {
@@ -491,7 +491,7 @@ body.body--ticket .app-shell {
   right: 0;
   bottom: 0;
   z-index: 200;
-  height: 78px;
+  height: 104px;
   padding-bottom: env(safe-area-inset-bottom, 0px);
   background: #fff;
   display: flex;
@@ -532,15 +532,15 @@ body.body--ticket .app-shell {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 118px;
-  height: 52px;
-  padding: 0 26px;
+  min-width: 152px;
+  height: 68px;
+  padding: 0 34px;
   background: #f89b2c;
   color: #111;
-  font-size: 26px;
+  font-size: 34px;
   font-weight: 700;
   letter-spacing: 0.02em;
-  border-radius: 18px 18px 4px 18px;
+  border-radius: 22px 22px 5px 22px;
   white-space: nowrap;
   flex-shrink: 0;
 }
@@ -558,19 +558,19 @@ body.body--ticket .app-shell {
 /* Мобильная адаптация — масштаб макета 738×1516 под ширину экрана */
 @media (max-width: 760px) {
   body.body--ticket {
-    padding-bottom: calc(14vw + env(safe-area-inset-bottom, 0px));
+    padding-bottom: calc(18vw + env(safe-area-inset-bottom, 0px));
   }
 
   .ticker {
-    height: 14vw;
+    height: 18vw;
   }
 
   .ticker__chip {
-    min-width: 22vw;
-    height: 9vw;
-    padding: 0 4vw;
-    font-size: 4.5vw;
-    border-radius: 3.5vw 3.5vw 0.8vw 3.5vw;
+    min-width: 28vw;
+    height: 12vw;
+    padding: 0 5vw;
+    font-size: 5.8vw;
+    border-radius: 4.5vw 4.5vw 1vw 4.5vw;
   }
 
   .ticker__group {
