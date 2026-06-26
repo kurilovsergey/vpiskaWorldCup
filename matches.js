@@ -33,7 +33,7 @@ const MATCHES = [
   { num: 63, teams: "Panama vs England", date: "27 JUN 26", time: "17:00", stadium: "New York/New Jersey Stadium", entrance: "A/B" },
   { num: 64, teams: "Croatia vs Ghana", date: "27 JUN 26", time: "17:00", stadium: "Philadelphia Stadium", entrance: "A/B/C" },
   { num: 65, teams: "Colombia vs Portugal", date: "27 JUN 26", time: "19:30", stadium: "Miami Stadium", entrance: "A/B" },
-  { num: 66, teams: "DR Congo vs Uzbekistan", date: "27 JUN 26", time: "19:30", stadium: "Atlanta Stadium", entrance: "A/B/C" },
+  { num: 66, teams: "Uruguay vs Spain", date: "27 JUN 26", time: "19:30", stadium: "Monterrey Stadium", entrance: "B/C/D/E" },
   { num: 67, teams: "Jordan vs Argentina", date: "27 JUN 26", time: "22:00", stadium: "Kansas City Stadium", entrance: "A/B" },
   { num: 68, teams: "Algeria vs Austria", date: "27 JUN 26", time: "22:00", stadium: "Dallas Stadium", entrance: "A/B/C" },
 
