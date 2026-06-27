@@ -41,7 +41,7 @@ const MATCHES = [
 
   { num: 70, teams: "TBD 1st Group C vs TBD 2nd Group F", date: "29 JUN 26", time: "13:00", stadium: "Boston Stadium", entrance: "A/B" },
   { num: 71, teams: "Germany vs TBD 3rd Group A/B/C/D/F", date: "29 JUN 26", time: "16:30", stadium: "New York/New Jersey Stadium", entrance: "A/B/C" },
-  { num: 72, teams: "TBD 1st Group F vs TBD 2nd Group C", date: "29 JUN 26", time: "21:00", stadium: "Mexico City Stadium", entrance: "A/B" },
+  { num: 72, teams: "DR Congo vs Uzbekistan", date: "29 JUN 26", time: "19:30", stadium: "Atlanta Stadium", entrance: "A/B" },
 
   { num: 73, teams: "TBD 2nd Group E vs TBD 2nd Group I", date: "30 JUN 26", time: "13:00", stadium: "Dallas Stadium", entrance: "A/B" },
   { num: 74, teams: "TBD 1st Group I vs TBD 3rd Group C/D/F/G/H", date: "30 JUN 26", time: "17:00", stadium: "Atlanta Stadium", entrance: "A/B/C" },
