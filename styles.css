@@ -387,6 +387,12 @@ body.body--ticket .app-shell {
   width: 100%;
 }
 
+.box--entrance {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .grid {
   display: grid;
   grid-template-columns: 1.12fr 0.58fr 0.7fr 0.7fr;
