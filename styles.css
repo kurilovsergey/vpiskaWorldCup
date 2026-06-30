@@ -370,29 +370,6 @@ body.body--ticket .app-shell {
   object-position: center;
 }
 
-.seat-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  margin: 0 50px 21px;
-}
-
-.seat-grid__row {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 8px;
-}
-
-.box--wide {
-  width: 100%;
-}
-
-.box--entrance {
-  width: 80%;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 .grid {
   display: grid;
   grid-template-columns: 1.12fr 0.58fr 0.7fr 0.7fr;
@@ -727,15 +704,6 @@ body.body--ticket .app-shell {
   .meta__ico {
     width: 3.4vw;
     height: 3.4vw;
-  }
-
-  .seat-grid {
-    margin: 0 6.8vw 2.8vw;
-    gap: 1.08vw;
-  }
-
-  .seat-grid__row {
-    gap: 1.08vw;
   }
 
   .grid {
