@@ -3,6 +3,7 @@
   const ticketView = document.getElementById("ticket-view");
   const form = document.getElementById("ticket-form");
   const matchSelect = document.getElementById("match");
+  const entranceInput = document.getElementById("entrance");
   const btnBack = document.getElementById("btn-back");
 
   const fields = {
@@ -20,6 +21,11 @@
     category: document.getElementById("out-category"),
   };
 
+  function syncEntranceFromMatch() {
+    const m = getMatch(Number(matchSelect.value));
+    if (m?.entrance) entranceInput.value = m.entrance;
+  }
+
   function initMatchSelect() {
     MATCHES.forEach((m) => {
       const opt = document.createElement("option");
@@ -28,6 +34,8 @@
       if (m.num === 78) opt.selected = true;
       matchSelect.appendChild(opt);
     });
+    syncEntranceFromMatch();
+    matchSelect.addEventListener("change", syncEntranceFromMatch);
   }
 
   function getMatch(num) {
@@ -76,7 +84,7 @@
     fields.matchTitle.textContent = `M${m.num} ${m.teams}`;
     fields.datetime.textContent = `${m.date}, ${m.time}`;
     fields.stadium.textContent = m.stadium;
-    fields.entrance.textContent = m.entrance;
+    fields.entrance.textContent = data.entrance;
     fields.area.textContent = data.area;
     fields.gate.textContent = data.gate;
     fields.block.textContent = data.block;
@@ -92,6 +100,7 @@
     const ticketCode = document.getElementById("ticket-code").value.trim() || "368";
     fillTicket({
       match,
+      entrance: entranceInput.value.trim().toUpperCase(),
       gate: document.getElementById("gate").value.trim().toUpperCase(),
       area: document.getElementById("area").value.trim().toUpperCase(),
       block: document.getElementById("block").value.trim(),
