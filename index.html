@@ -21,16 +21,16 @@
           <select id="match" name="match" required></select>
         </label>
         <label class="field">
+          <span class="field__label">Area / Área</span>
+          <input type="text" id="area" name="area" value="A" required maxlength="12">
+        </label>
+        <label class="field">
           <span class="field__label">Gate / Puerta</span>
           <input type="text" id="gate" name="gate" value="P6" required maxlength="12">
         </label>
         <label class="field">
-          <span class="field__label">Stairs / Escalera</span>
-          <input type="text" id="stairs" name="stairs" value="7" required maxlength="8">
-        </label>
-        <label class="field">
-          <span class="field__label">Section / Sección</span>
-          <input type="text" id="section" name="section" value="231" required maxlength="8">
+          <span class="field__label">Block</span>
+          <input type="text" id="block" name="block" value="231" required maxlength="8">
         </label>
         <label class="field">
           <span class="field__label">Row / Fila</span>
@@ -102,33 +102,32 @@
             </div>
           </div>
 
-          <div class="grid">
-            <div class="box">
-              <label>Entrance<br>Ingreso</label>
+          <div class="seat-grid">
+            <div class="box box--wide">
+              <label>External Entrance<br>Ingreso externo</label>
               <strong id="out-entrance">A/B</strong>
             </div>
-            <div class="box">
-              <label>Gate<br>Puerta</label>
-              <strong id="out-gate">P6</strong>
+            <div class="box box--wide">
+              <label>Area<br>Área</label>
+              <strong id="out-area">A</strong>
             </div>
-            <div class="box">
-              <label>Stairs<br>Escalera</label>
-              <strong id="out-stairs">7</strong>
-            </div>
-            <div class="box">
-              <label>Section<br>Sección</label>
-              <strong id="out-section">231</strong>
-            </div>
-          </div>
-
-          <div class="smallgrid">
-            <div class="box">
-              <label>Row<br>Fila</label>
-              <strong id="out-row">Z</strong>
-            </div>
-            <div class="box">
-              <label>Seat<br>Asiento</label>
-              <strong id="out-seat">9</strong>
+            <div class="seat-grid__row">
+              <div class="box">
+                <label>Gate<br>Puerta</label>
+                <strong id="out-gate">P6</strong>
+              </div>
+              <div class="box">
+                <label>Block</label>
+                <strong id="out-block">231</strong>
+              </div>
+              <div class="box">
+                <label>Row<br>Fila</label>
+                <strong id="out-row">Z</strong>
+              </div>
+              <div class="box">
+                <label>Seat<br>Asiento</label>
+                <strong id="out-seat">9</strong>
+              </div>
             </div>
           </div>
 

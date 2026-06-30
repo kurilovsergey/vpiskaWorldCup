@@ -11,9 +11,9 @@
     datetime: document.getElementById("out-datetime"),
     stadium: document.getElementById("out-stadium"),
     entrance: document.getElementById("out-entrance"),
+    area: document.getElementById("out-area"),
     gate: document.getElementById("out-gate"),
-    stairs: document.getElementById("out-stairs"),
-    section: document.getElementById("out-section"),
+    block: document.getElementById("out-block"),
     row: document.getElementById("out-row"),
     seat: document.getElementById("out-seat"),
     holder: document.getElementById("out-holder"),
@@ -77,9 +77,9 @@
     fields.datetime.textContent = `${m.date}, ${m.time}`;
     fields.stadium.textContent = m.stadium;
     fields.entrance.textContent = m.entrance;
+    fields.area.textContent = data.area;
     fields.gate.textContent = data.gate;
-    fields.stairs.textContent = data.stairs;
-    fields.section.textContent = data.section;
+    fields.block.textContent = data.block;
     fields.row.textContent = data.row;
     fields.seat.textContent = data.seat;
     fields.holder.textContent = data.holder;
@@ -93,8 +93,8 @@
     fillTicket({
       match,
       gate: document.getElementById("gate").value.trim().toUpperCase(),
-      stairs: document.getElementById("stairs").value.trim(),
-      section: document.getElementById("section").value.trim(),
+      area: document.getElementById("area").value.trim().toUpperCase(),
+      block: document.getElementById("block").value.trim(),
       row: document.getElementById("row").value.trim().toUpperCase(),
       seat: document.getElementById("seat").value.trim(),
       holder: document.getElementById("holder").value.trim().toUpperCase(),
