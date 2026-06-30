@@ -29,7 +29,7 @@
       const opt = document.createElement("option");
       opt.value = String(m.num);
       opt.textContent = `M${m.num} — ${m.teams} (${m.date}, ${m.stadium})`;
-      if (m.num === 78) opt.selected = true;
+      if (m.num === 77) opt.selected = true;
       matchSelect.appendChild(opt);
     });
     syncEntranceFromMatch();
