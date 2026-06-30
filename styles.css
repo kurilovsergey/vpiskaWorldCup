@@ -377,6 +377,10 @@ body.body--ticket .app-shell {
   margin: 0 50px 21px;
 }
 
+.grid--four {
+  grid-template-columns: repeat(4, 1fr);
+}
+
 .box {
   height: 127px;
   background: #e8e7ec;
@@ -535,7 +539,7 @@ body.body--ticket .app-shell {
   min-width: 152px;
   height: 68px;
   padding: 0 34px;
-  background: #22c55e;
+  background: #00d2ac;
   color: #111;
   font-size: 34px;
   font-weight: 700;
